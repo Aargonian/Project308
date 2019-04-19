@@ -13,7 +13,7 @@
         <!--Timer-->
         <scene sceneID="tj6-Zy-LVG">
             <objects>
-                <viewController id="Qye-JV-Pqh" sceneMemberID="viewController">
+                <viewController id="Qye-JV-Pqh" customClass="TimerViewController" customModule="Project308" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOK-pC-mqV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
         <!--Stopwatch-->
         <scene sceneID="LPL-s6-U34">
             <objects>
-                <viewController id="Gtu-61-Naf" sceneMemberID="viewController">
+                <viewController id="Gtu-61-Naf" customClass="StopWatchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rFa-ED-Nh9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

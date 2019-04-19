@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169F53B9226A243700546074 /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F53B8226A243700546074 /* WorldClockViewController.swift */; };
 		16C2E9372266302E00C8FA04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2E9362266302E00C8FA04 /* AppDelegate.swift */; };
 		16C2E93C2266302E00C8FA04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C2E93A2266302E00C8FA04 /* Main.storyboard */; };
 		16C2E93E2266302E00C8FA04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C2E93D2266302E00C8FA04 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		169F53B8226A243700546074 /* WorldClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockViewController.swift; sourceTree = "<group>"; };
 		16C2E9332266302E00C8FA04 /* Project308.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project308.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C2E9362266302E00C8FA04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C2E93B2266302E00C8FA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				D745B591226A512500C85F2A /* StopWatchViewController.swift */,
 				D745B593226A55EF00C85F2A /* TimerViewController.swift */,
 				16C2E93A2266302E00C8FA04 /* Main.storyboard */,
+				169F53B8226A243700546074 /* WorldClockViewController.swift */,
 				16C2E93D2266302E00C8FA04 /* Assets.xcassets */,
 				16C2E93F2266302E00C8FA04 /* LaunchScreen.storyboard */,
 				16C2E9422266302E00C8FA04 /* Info.plist */,

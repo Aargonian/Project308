@@ -37,7 +37,7 @@ class WorldClockViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func updateClock()
     {
-        let date = Date()
+        let date = Date().addingTimeInterval(TimeInterval(60 * 60 * UTC_ZONES[currentZone]))
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)

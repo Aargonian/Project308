@@ -90,18 +90,11 @@
         <!--Stopwatch-->
         <scene sceneID="LPL-s6-U34">
             <objects>
-                <viewController id="Gtu-61-Naf" customClass="StopWatchViewController" sceneMemberID="viewController">
+                <viewController id="Gtu-61-Naf" customClass="StopWatchViewController" customModule="Project308" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rFa-ED-Nh9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-2E-otA">
-                                <rect key="frame" x="0.0" y="399" width="375" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiJ-Ss-nIv">
                                 <rect key="frame" x="55" y="494" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -126,6 +119,13 @@
                                     <action selector="labButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="261-nX-TA1"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Could you imagine if someone actually used this app?" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-9Z-ca6">
+                                <rect key="frame" x="16" y="72" width="343" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-HL-wMs">
                                 <rect key="frame" x="55" y="556" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,7 +139,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear All Laps"/>
                                 <connections>
-                                    <action selector="clearAllLapsButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="3h8-DA-QIw"/>
+                                    <action selector="clearAllLapsButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="K5e-Yq-o0X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRI-k7-8NU">
@@ -157,20 +157,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Could you imagine if someone actually used this app?" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-9Z-ca6">
-                                <rect key="frame" x="16" y="72" width="343" height="319"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-2E-otA">
+                                <rect key="frame" x="-1" y="363" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BHy-Uz-0Z6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" id="S3d-U5-GW1"/>
                     <connections>
-                        <outlet property="clearAllLapsButton" destination="vjg-qZ-5Tk" id="m67-fP-COy"/>
+                        <outlet property="clearAllLapsButton" destination="vjg-qZ-5Tk" id="f2a-6U-gQa"/>
                         <outlet property="clearLastLapButton" destination="sTB-HL-wMs" id="e95-wa-Hgm"/>
                         <outlet property="clearTimesButton" destination="oRI-k7-8NU" id="KqA-W7-JSs"/>
                         <outlet property="lapButton" destination="Pdk-cV-hfu" id="nHq-pH-T2O"/>

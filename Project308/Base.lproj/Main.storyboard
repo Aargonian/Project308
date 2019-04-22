@@ -33,17 +33,28 @@
                                 <rect key="frame" x="169" y="585" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearPressed:" destination="Qye-JV-Pqh" eventType="touchUpInside" id="k3c-P9-NUQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-EI-Kte">
                                 <rect key="frame" x="170" y="491" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startStopPressed:" destination="Qye-JV-Pqh" eventType="touchUpInside" id="0V3-fL-bco"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cf5-pJ-AmR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="btY-Uw-RMI"/>
+                    <connections>
+                        <outlet property="startStopButton" destination="k0f-EI-Kte" id="OT6-bi-f84"/>
+                        <outlet property="timeLabel" destination="SOV-8m-KXd" id="hM0-Ka-UhC"/>
+                        <outlet property="timePicker" destination="l0r-dF-pdB" id="VFa-sJ-uik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mav-Yg-pGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

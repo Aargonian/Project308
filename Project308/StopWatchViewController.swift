@@ -18,22 +18,24 @@ class StopWatchViewController: UIViewController {
     @IBOutlet weak var clearAllLapsButton: UIButton!
     @IBOutlet weak var clearTimesButton: UIButton!
     
-    var timeStarted : Date? = nil
+    var elapsedTime : Double = 0
     var isRunning : Bool = false
     
     
     func timeLoop()
     {
         DispatchQueue.global(qos: .background).async {
+            var currentTime = Date()
+            var previousTime = currentTime
             while(self.isRunning) {
-                let now = Date()
-                let elapsedTime = now.timeIntervalSince(self.timeStarted!)
-                let hours = floor(elapsedTime/3600)
-                let minutes = Int((elapsedTime/60)) % 60
-                let seconds = Int(floor(elapsedTime))%60
-                let millis = Int(floor((elapsedTime * 1000))) % 1000
-                //let timeString = String.init(format: "%02d:%02d:%02d.%03d",
-                                             //hours, minutes, seconds, millis)
+                currentTime = Date()
+                self.elapsedTime += currentTime.timeIntervalSince(previousTime)
+                previousTime = currentTime
+                
+                let hours = floor(self.elapsedTime/3600)
+                let minutes = Int((self.elapsedTime/60)) % 60
+                let seconds = Int(floor(self.elapsedTime))%60
+                let millis = Int(floor((self.elapsedTime * 1000))) % 1000
                 
                 let hourStr = String.init(format: "%d", hours)
                 let minuteStr = String.init(format: "%02d", minutes)
@@ -54,9 +56,6 @@ class StopWatchViewController: UIViewController {
         lapButton.isEnabled = true
         stopButton.isEnabled = true
         
-        if timeStarted == nil {
-            timeStarted = Date()
-        }
         isRunning = true
         timeLoop()
     }
@@ -94,8 +93,8 @@ class StopWatchViewController: UIViewController {
     
     @IBAction func clearTimeButtonPressed(_ sender: UIButton) {
         startButton.isEnabled = true
-        
-        timeLabel.text! = "00:00:00.000"
+        elapsedTime = 0
+        timeLabel.text! = "0:00:00.000"
     }
     
     

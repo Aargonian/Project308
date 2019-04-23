@@ -113,18 +113,16 @@ class StopWatchViewController: UIViewController {
          * it. Then we set lapTimeTextView.text! equal to what's left over + a new l
          * line
          */
-        if !lapTimeTextView.text!.isEmpty {
+        if !lapTimeTextView.text!.isEmpty
+        {
             var lapList = lapTimeTextView.text!.split(separator: "\n")
             lapList.popLast()
             lapTimeTextView.text! = lapList.joined(separator: "\n") + "\n"
-        }
-        /*
-         * If, after clearing the last lap, there are no lap times, then we need to
-         * disable both clear lap buttons
-         */
-        if lapTimeTextView.text!.isEmpty{
-            clearLastLapButton.isEnabled = false
-            clearAllLapsButton.isEnabled = false
+            if lapList.count == 0 {
+                lapTimeTextView.text! = ""
+                clearLastLapButton.isEnabled = false
+                clearAllLapsButton.isEnabled = false
+            }
         }
     }
     

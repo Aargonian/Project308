@@ -69,6 +69,7 @@ class StopWatchViewController: UIViewController {
          * allow stopping the timer and adding a lap time. However, we need to
          * disable the button that starts the timer
          */
+        clearTimesButton.isEnabled = false
         startButton.isEnabled = false
         lapButton.isEnabled = true
         stopButton.isEnabled = true
@@ -140,6 +141,7 @@ class StopWatchViewController: UIViewController {
          * At this point, we'll need to enable the start button, then
          * disable the stop and lap buttons.
          */
+        clearTimesButton.isEnabled = false
         startButton.isEnabled = true
         lapButton.isEnabled = false
         stopButton.isEnabled = false

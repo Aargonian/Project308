@@ -90,45 +90,95 @@
         <!--Stopwatch-->
         <scene sceneID="LPL-s6-U34">
             <objects>
-                <viewController id="Gtu-61-Naf" customClass="StopWatchViewController" sceneMemberID="viewController">
+                <viewController id="Gtu-61-Naf" customClass="StopWatchViewController" customModule="Project308" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rFa-ED-Nh9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-2E-otA">
-                                <rect key="frame" x="0.0" y="371" width="375" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiJ-Ss-nIv">
-                                <rect key="frame" x="55" y="464" width="46" height="30"/>
+                                <rect key="frame" x="55" y="494" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="1xi-DC-hbl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2N-hJ-lqb">
-                                <rect key="frame" x="272" y="464" width="46" height="30"/>
+                                <rect key="frame" x="272" y="494" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="VuA-lx-Quh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-cV-hfu">
-                                <rect key="frame" x="164" y="464" width="46" height="30"/>
+                                <rect key="frame" x="164" y="494" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Lap"/>
+                                <connections>
+                                    <action selector="labButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="261-nX-TA1"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Could you imagine if someone actually used this app?" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-9Z-ca6">
-                                <rect key="frame" x="16" y="44" width="343" height="319"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-9Z-ca6">
+                                <rect key="frame" x="16" y="72" width="343" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-HL-wMs">
+                                <rect key="frame" x="55" y="556" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Last Lap"/>
+                                <connections>
+                                    <action selector="clearLastLapButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="nVT-lh-2lL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-qZ-5Tk">
+                                <rect key="frame" x="196" y="556" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear All Laps"/>
+                                <connections>
+                                    <action selector="clearAllLapsButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="K5e-Yq-o0X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRI-k7-8NU">
+                                <rect key="frame" x="144" y="618" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Time"/>
+                                <connections>
+                                    <action selector="clearTimeButtonPressed:" destination="Gtu-61-Naf" eventType="touchUpInside" id="dcw-1f-qlE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lap TImes: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-cV-xku">
+                                <rect key="frame" x="114" y="44" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00:00.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-2E-otA">
+                                <rect key="frame" x="-1" y="363" width="375" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BHy-Uz-0Z6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" id="S3d-U5-GW1"/>
+                    <connections>
+                        <outlet property="clearAllLapsButton" destination="vjg-qZ-5Tk" id="f2a-6U-gQa"/>
+                        <outlet property="clearLastLapButton" destination="sTB-HL-wMs" id="e95-wa-Hgm"/>
+                        <outlet property="clearTimesButton" destination="oRI-k7-8NU" id="KqA-W7-JSs"/>
+                        <outlet property="lapButton" destination="Pdk-cV-hfu" id="nHq-pH-T2O"/>
+                        <outlet property="lapTimeTextView" destination="Ei5-9Z-ca6" id="lxz-m6-cAa"/>
+                        <outlet property="startButton" destination="AiJ-Ss-nIv" id="9Tx-as-op9"/>
+                        <outlet property="stopButton" destination="U2N-hJ-lqb" id="Hj4-yD-3KW"/>
+                        <outlet property="timeLabel" destination="OuW-2E-otA" id="hm8-QK-JV4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaE-gk-lmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

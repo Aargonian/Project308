@@ -101,6 +101,7 @@ class WorldClockViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        timezonePicker.selectRow(currentZone, inComponent: 0, animated: true)
         updateClock()
     }
     

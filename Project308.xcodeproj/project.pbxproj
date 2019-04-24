@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		169F53B9226A243700546074 /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F53B8226A243700546074 /* WorldClockViewController.swift */; };
 		16C2E9372266302E00C8FA04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2E9362266302E00C8FA04 /* AppDelegate.swift */; };
 		16C2E93C2266302E00C8FA04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C2E93A2266302E00C8FA04 /* Main.storyboard */; };
 		16C2E93E2266302E00C8FA04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C2E93D2266302E00C8FA04 /* Assets.xcassets */; };
@@ -16,6 +15,7 @@
 		16C2E9572266302E00C8FA04 /* Project308UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2E9562266302E00C8FA04 /* Project308UITests.swift */; };
 		D745B592226A512500C85F2A /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745B591226A512500C85F2A /* StopWatchViewController.swift */; };
 		D745B594226A55EF00C85F2A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745B593226A55EF00C85F2A /* TimerViewController.swift */; };
+		D7A41CAA227009750094886D /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F53B8226A243700546074 /* WorldClockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A41CAA227009750094886D /* WorldClockViewController.swift in Sources */,
 				D745B592226A512500C85F2A /* StopWatchViewController.swift in Sources */,
 				D745B594226A55EF00C85F2A /* TimerViewController.swift in Sources */,
 				16C2E9372266302E00C8FA04 /* AppDelegate.swift in Sources */,

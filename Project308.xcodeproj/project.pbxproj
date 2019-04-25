@@ -13,6 +13,7 @@
 		16C2E9412266302E00C8FA04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C2E93F2266302E00C8FA04 /* LaunchScreen.storyboard */; };
 		16C2E94C2266302E00C8FA04 /* Project308Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2E94B2266302E00C8FA04 /* Project308Tests.swift */; };
 		16C2E9572266302E00C8FA04 /* Project308UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2E9562266302E00C8FA04 /* Project308UITests.swift */; };
+		D712DAC82271F43B008E73D8 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712DAC72271F43B008E73D8 /* AlarmViewController.swift */; };
 		D745B592226A512500C85F2A /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745B591226A512500C85F2A /* StopWatchViewController.swift */; };
 		D745B594226A55EF00C85F2A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745B593226A55EF00C85F2A /* TimerViewController.swift */; };
 		D7A41CAA227009750094886D /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F53B8226A243700546074 /* WorldClockViewController.swift */; };
@@ -49,6 +50,7 @@
 		16C2E9522266302E00C8FA04 /* Project308UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project308UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C2E9562266302E00C8FA04 /* Project308UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project308UITests.swift; sourceTree = "<group>"; };
 		16C2E9582266302E00C8FA04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D712DAC72271F43B008E73D8 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		D745B591226A512500C85F2A /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		D745B593226A55EF00C85F2A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,10 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				16C2E9362266302E00C8FA04 /* AppDelegate.swift */,
+				169F53B8226A243700546074 /* WorldClockViewController.swift */,
 				D745B591226A512500C85F2A /* StopWatchViewController.swift */,
 				D745B593226A55EF00C85F2A /* TimerViewController.swift */,
+				D712DAC72271F43B008E73D8 /* AlarmViewController.swift */,
 				16C2E93A2266302E00C8FA04 /* Main.storyboard */,
-				169F53B8226A243700546074 /* WorldClockViewController.swift */,
 				16C2E93D2266302E00C8FA04 /* Assets.xcassets */,
 				16C2E93F2266302E00C8FA04 /* LaunchScreen.storyboard */,
 				16C2E9422266302E00C8FA04 /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D712DAC82271F43B008E73D8 /* AlarmViewController.swift in Sources */,
 				D7A41CAA227009750094886D /* WorldClockViewController.swift in Sources */,
 				D745B592226A512500C85F2A /* StopWatchViewController.swift in Sources */,
 				D745B594226A55EF00C85F2A /* TimerViewController.swift in Sources */,

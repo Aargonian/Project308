@@ -9,13 +9,27 @@
 import UIKit
 
 class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    var hour = 0.0
+    var minute = 0.0
+    var second = 0.0
+    
     
     @IBAction func clearPressed(_ sender: UIButton) {
-        
+        hour = 0.0
+        minute = 0.0
+        second = 0.0
+        timeLabel.text = "00:00:00"
     }
     
     @IBAction func startStopPressed(_ sender: UIButton) {
-        
+        if isRunning == false {
+            isRunning = true
+            startStopButton.setTitle("Stop", for: UIControl.State.normal)
+        }
+        else{
+            isRunning = false
+            startStopButton.setTitle("Start", for: UIControl.State.normal)
+        }
     }
     
     @IBOutlet weak var startStopButton: UIButton!
@@ -24,19 +38,30 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     @IBOutlet weak var timePicker: UIPickerView!
     
-    var times = [
-        [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]
-    ]
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return times[component].count
+        if component == 0{
+            return 99
+        }
+        else{
+            return 60
+        }
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row)"
+    }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        hour = Double(timePicker.selectedRow(inComponent: 0))
+        minute = Double(timePicker.selectedRow(inComponent: 1))
+        second = Double(timePicker.selectedRow(inComponent: 2))
+    }
     
     var isRunning = false
     var elapsedTime = 0.0
@@ -51,9 +76,29 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 self.elapsedTime += currentTime.timeIntervalSince(previousTime)
                 previousTime = currentTime
                 
-                let hours = floor(self.elapsedTime/3600)
-                let minutes = Int((self.elapsedTime/60)) % 60
-                let seconds = Int(floor(self.elapsedTime))%60
+                var hours = floor(self.hour-(self.elapsedTime/3600))
+                var minutes = Int(self.minute-(self.elapsedTime/60)) % 60
+                var seconds = Int(floor(self.second-self.elapsedTime))%60
+                
+                if seconds == 0{
+                    if minutes != 0{
+                        minutes -= 1
+                        seconds = 60
+                    }
+                    else{
+                        if hours != 0{
+                            hours -= 1
+                            minutes = 59
+                            seconds = 60
+                        }
+                    }
+                }
+                if minutes == 0{
+                    if hours != 0{
+                        hours -= 1
+                        minutes = 60
+                    }
+                }
                 
                 let hourStr = String.init(format: "%d", hours)
                 let minuteStr = String.init(format: "%02d", minutes)
@@ -64,6 +109,25 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 DispatchQueue.main.async {
                     self.timeLabel.text! = timeString
                 }
+                
+                if hours == 0 && minutes == 0 && seconds == 0{
+                    let alertController = UIAlertController(title: "TIME IS UP",
+                                                            message: "YOUR TIMER IS OVER",
+                                                            preferredStyle: UIAlertController.Style.alert)
+                    
+                    let defaultAction = UIAlertAction(title: "STOP BEING LAZY",
+                                                      style: UIAlertAction.Style.cancel,
+                                                      handler: nil)
+                    
+                    // add the buttons into the alert controller object
+                    alertController.addAction(defaultAction)
+                    
+                    // display
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    self.isRunning = false
+                }
+                
                 usleep(1000)
             }
         }

@@ -61,6 +61,8 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         hour = Double(timePicker.selectedRow(inComponent: 0))
         minute = Double(timePicker.selectedRow(inComponent: 1))
         second = Double(timePicker.selectedRow(inComponent: 2))
+        let timeString = "\(hour):\(minute):\(second))"
+        timeLabel.text! = timeString
     }
     
     var isRunning = false

@@ -36,6 +36,38 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         return times[component].count
     }
     
+    
+    
+    var isRunning = false
+    var elapsedTime = 0.0
+    
+    func timeLoop() {
+        DispatchQueue.global(qos: .background).async {
+            var currentTime = Date()
+            var previousTime = currentTime
+            
+            while(self.isRunning) {
+                currentTime = Date()
+                self.elapsedTime += currentTime.timeIntervalSince(previousTime)
+                previousTime = currentTime
+                
+                let hours = floor(self.elapsedTime/3600)
+                let minutes = Int((self.elapsedTime/60)) % 60
+                let seconds = Int(floor(self.elapsedTime))%60
+                
+                let hourStr = String.init(format: "%d", hours)
+                let minuteStr = String.init(format: "%02d", minutes)
+                let secondsStr = String.init(format: "%02d", seconds)
+                
+                let timeString = "\(hourStr):\(minuteStr):\(secondsStr))"
+                
+                DispatchQueue.main.async {
+                    self.timeLabel.text! = timeString
+                }
+                usleep(1000)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

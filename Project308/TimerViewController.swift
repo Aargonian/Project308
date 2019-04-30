@@ -19,12 +19,14 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         minute = 0.0
         second = 0.0
         timeLabel.text = "00:00:00"
+        isRunning = false
     }
     
     @IBAction func startStopPressed(_ sender: UIButton) {
         if isRunning == false {
             isRunning = true
             startStopButton.setTitle("Stop", for: UIControl.State.normal)
+            timeLoop()
         }
         else{
             isRunning = false
@@ -61,6 +63,8 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         hour = Double(timePicker.selectedRow(inComponent: 0))
         minute = Double(timePicker.selectedRow(inComponent: 1))
         second = Double(timePicker.selectedRow(inComponent: 2))
+        let timeString = "\(timePicker.selectedRow(inComponent: 0)):\(timePicker.selectedRow(inComponent: 1)):\(timePicker.selectedRow(inComponent: 2))"
+        timeLabel.text! = timeString
     }
     
     var isRunning = false
@@ -103,8 +107,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 let hourStr = String.init(format: "%d", hours)
                 let minuteStr = String.init(format: "%02d", minutes)
                 let secondsStr = String.init(format: "%02d", seconds)
-                
-                let timeString = "\(hourStr):\(minuteStr):\(secondsStr))"
+                let timeString = "\(hourStr):\(minuteStr):\(secondsStr)"
                 
                 DispatchQueue.main.async {
                     self.timeLabel.text! = timeString

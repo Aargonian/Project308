@@ -12,12 +12,15 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var hour = 0.0
     var minute = 0.0
     var second = 0.0
+    var time = 0.0
     
     
     @IBAction func clearPressed(_ sender: UIButton) {
         hour = 0.0
         minute = 0.0
         second = 0.0
+        time = 0.0
+        elapsedTime = 0.0
         timeLabel.text = "00:00:00"
         isRunning = false
     }
@@ -63,6 +66,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         hour = Double(timePicker.selectedRow(inComponent: 0))
         minute = Double(timePicker.selectedRow(inComponent: 1))
         second = Double(timePicker.selectedRow(inComponent: 2))
+        time = hour*3600 + minute*60 + second
         let timeString = "\(timePicker.selectedRow(inComponent: 0)):\(timePicker.selectedRow(inComponent: 1)):\(timePicker.selectedRow(inComponent: 2))"
         timeLabel.text! = timeString
     }
@@ -80,29 +84,11 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 self.elapsedTime += currentTime.timeIntervalSince(previousTime)
                 previousTime = currentTime
                 
-                var hours = floor(self.hour-(self.elapsedTime/3600))
-                var minutes = Int(self.minute-(self.elapsedTime/60)) % 60
-                var seconds = Int(floor(self.second-self.elapsedTime))%60
+                let hours = Int((self.time-self.elapsedTime))/3600
+                let minutes = (Int((self.time-self.elapsedTime))%3600)/60
+                let seconds = (Int((self.time-self.elapsedTime))%3600)%60
                 
-                if seconds == 0{
-                    if minutes != 0{
-                        minutes -= 1
-                        seconds = 60
-                    }
-                    else{
-                        if hours != 0{
-                            hours -= 1
-                            minutes = 59
-                            seconds = 60
-                        }
-                    }
-                }
-                if minutes == 0{
-                    if hours != 0{
-                        hours -= 1
-                        minutes = 60
-                    }
-                }
+                
                 
                 let hourStr = String.init(format: "%d", hours)
                 let minuteStr = String.init(format: "%02d", minutes)
@@ -128,6 +114,8 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                     // display
                     self.present(alertController, animated: true, completion: nil)
                     
+                    self.elapsedTime = 0
+                    self.startStopButton.setTitle("Start", for: UIControl.State.normal)
                     self.isRunning = false
                 }
                 

@@ -22,17 +22,22 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         time = 0.0
         elapsedTime = 0.0
         timeLabel.text = "00:00:00"
+        timePicker.isHidden = false
+        timePicker.reloadAllComponents()
         isRunning = false
     }
     
     @IBAction func startStopPressed(_ sender: UIButton) {
         if isRunning == false {
             isRunning = true
+            timePicker.isHidden = true
             startStopButton.setTitle("Stop", for: UIControl.State.normal)
             timeLoop()
         }
         else{
             isRunning = false
+            timePicker.isHidden = false
+            timePicker.reloadAllComponents()
             startStopButton.setTitle("Start", for: UIControl.State.normal)
         }
     }
@@ -114,14 +119,20 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                     // display
                     self.present(alertController, animated: true, completion: nil)
                     
-                    self.elapsedTime = 0
-                    self.startStopButton.setTitle("Start", for: UIControl.State.normal)
+                    self.finish()
                     self.isRunning = false
                 }
                 
                 usleep(1000)
             }
         }
+    }
+    
+    func finish(){
+        elapsedTime = 0
+        startStopButton.setTitle("Start", for: UIControl.State.normal)
+        timePicker.isHidden = false
+        timePicker.reloadAllComponents()
     }
 
     override func viewDidLoad() {
